@@ -20,7 +20,7 @@ export default function Home() {
             <p className='mt-5 max-w-prose text-zinc sm:text-lg'>
                 Quill allows you to have conversation with any PDF document. simply upload your file and start asking question right away.
             </p>
-                <Link href={'/dashboard'} target='_blank' 
+                <Link href={'/dashboard'} target='_blank'
                     className={buttonVariants({size : 'lg' ,className : 'mt-5 bg-black'})}>
                     Get started <ArrowRight className='ml-2 h-5 w-5'/>
                 </Link>
@@ -64,8 +64,6 @@ export default function Home() {
             </div>
         </div>
         
-        {/* Faeture section */}
-        
         <div className='mx-auto mb-32 max-w-5xl sm:mt-56'>
             <div className='mb-12 px-6 lg:px-8'>
                 <div className='mx-auto max-w-2xl sm:text-center'>
@@ -73,7 +71,6 @@ export default function Home() {
                     <p className='mt-4 text-lg text-gray-600'>Chatting to your PDF files has never been easier than with Quill</p>
                 </div>
             </div>
-            {/* steps */}
             <ol className='my-8 space-y-4 flex pt-8 md:space-x-12 md:space-y-0 max-md:flex-col'>
                 <li className='md:flex-1'>
                     <div className='flex flex-col mb-4 space-y-2 border-1-4 border-zinc-300 py-2 pl-4 md:border-t-2  md:pb-0 md:pl-0 md:pt-4'>
@@ -123,7 +120,6 @@ export default function Home() {
             </div>
             
         </div>
-        
         
     </>
     )
