@@ -7,9 +7,8 @@ import { ArrowRight, LogOutIcon } from 'lucide-react';
 
 
 const Navbar = () => {
-    const {getUser} = getKindeServerSession()
-    const user = getUser()
-    
+    const {isAuthenticated} = getKindeServerSession()
+    const userIsConnected = isAuthenticated()
     return (
         <nav className='h-14 z-40 sticky inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
             
@@ -22,7 +21,7 @@ const Navbar = () => {
                             <Link href={'/pricing'} className={buttonVariants({ className : '', variant:'ghost', size : 'sm'})}>
                                 Pricing
                             </Link>
-                            {user?.id || user ? (
+                            {userIsConnected ? (
                                 <LogoutLink 
                                 className={buttonVariants({ size : 'sm'})}>
                                     <LogOutIcon className='h-5 w-5 mr-1.5' />{" "}Log out
