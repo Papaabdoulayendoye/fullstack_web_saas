@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import {cn} from '../lib/utils'
 import Navbar from '@/components/Navbar'
+import Providers from '@/components/Providers'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -18,10 +19,12 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={cn('min-h-screen font-sans antialiased grainy')}> 
-                <Navbar />
-                {children}
-            </body>
+            <Providers>
+                <body className={cn('min-h-screen font-sans antialiased grainy')}> 
+                    <Navbar />
+                    {children}
+                </body>
+            </Providers>
         </html>
     )
 }
