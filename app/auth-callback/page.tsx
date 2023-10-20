@@ -1,7 +1,7 @@
 const AuthCallback = () => {
     return (
         <div>
-            AuthCallback
+            
         </div>
     )
 }
