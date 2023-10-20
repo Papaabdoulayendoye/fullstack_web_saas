@@ -1,6 +1,6 @@
 const AuthCallback = () => {
     return (
-        <div>
+        <div className='w-full max-h-screen'>
             
         </div>
     )
