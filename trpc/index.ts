@@ -7,26 +7,23 @@ export const appRouter = router({
     authCallback : publicProcedure.query( async () => {
         const { getUser } = getKindeServerSession()
         const user = getUser()
-        if (!user) {
+        if (!user?.email || !user?.id) {
             throw new TRPCError({code : 'UNAUTHORIZED'}) 
         }
         const UserExists = await db.user.findFirst({
             where : {
-                uesrId : user.id
+                userId : user.id
             }
         }) 
         if(!UserExists) {
             await db.user.create({
                 data : {
-                    uesrId : user.id,
+                    userId : user.id,
                     email : user.email
                 }
             })
         }
         return {success : true } 
-    }),
-    test : publicProcedure.query(() => {
-        
     })
 });
  
