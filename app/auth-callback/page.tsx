@@ -1,25 +1,35 @@
 "use client"
 import React from "react";
-import { Loader, Loader2 } from "lucide-react";
-import { useSearchParams, redirect, useRouter } from 'next/navigation';
+import { Loader2 } from "lucide-react";
+import { useSearchParams, useRouter, redirect } from 'next/navigation';
 import { trpc } from '../_trpc/client';
 const AuthCallback = () => {
+    const router = useRouter()
     const searchParams = useSearchParams()
     const origin = searchParams.get('origin')
-    const router = useRouter()
-    
-    const {data, isLoading} = trpc.authCallback.useQuery(undefined,{
+    trpc.authCallback.useQuery(undefined,{
         onSuccess : ({success}) => {
             if (success) {
                 router.push(origin ? `/${origin}`: '/dashboard')
             }
         }
+        ,
+        onError : (err) => {
+            if (err.data?.code == 'UNAUTHORIZED') {
+                redirect('/sign-in')
+            }
+        },
+        retry : true,
+        retryDelay :500 
     })
     
     return( 
-        <div className='flex flex-col items-center justify-center mt-10'>
-            <h1 className=' text-4xl text-black'>You 'll be redirect soon...</h1>
-            <Loader2 className=' h-[40px] w-[40px]' />
+        <div className='w-full flex justify-center mt-24'>
+            <div className='flex flex-col items-center gap-2'>
+                <Loader2 className='h-8 w-8 animate-spin text-zinc-800' />
+                <h3 className='font-semibold text-xl'>Setting up your account...</h3>
+                <p className=' text-sm text-slate-800'>You will be redirected automatically.</p>
+            </div>
         </div>
     )
 };
