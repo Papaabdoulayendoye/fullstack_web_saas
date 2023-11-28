@@ -15,7 +15,7 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en">
+        <html lang="en" className='light'>
             <Providers>
                 <body className={cn('min-h-screen font-sans antialiased grainy')}> 
                         <Navbar />

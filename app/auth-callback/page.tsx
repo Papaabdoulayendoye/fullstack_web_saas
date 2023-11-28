@@ -7,7 +7,7 @@ const AuthCallback = () => {
     const router = useRouter()
     const searchParams = useSearchParams()
     const origin = searchParams.get('origin')
-    
+
     trpc.authCallback.useQuery(undefined, {
         onSuccess({ success }) {
             if (success) {
@@ -15,7 +15,7 @@ const AuthCallback = () => {
             }
         },
         onError(err) {
-            if(err?.data?.code) router.push('/sign-in')
+            if(err?.data?.code) router.push('/api/auth/login')
         },
     })
     
