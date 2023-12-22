@@ -4,6 +4,8 @@ import {cn} from '../lib/utils'
 import Navbar from '@/components/Navbar'
 import Providers from '@/components/Providers'
 
+import 'react-loading-skeleton/dist/skeleton.css'
+
 export const metadata: Metadata = {
     title: 'Quill',
     description: 'Build an amazing SAAS web app with Josh',

@@ -2,9 +2,8 @@ import MaxWidthWrapper from '@/components/MaxWidthWrapper'
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 import { db } from '@/lib/utils';
-
-
-const Dashboard = async () => {
+import Dashboard from '@/components/Dashboard';
+const Page = async () => {
     const {getUser, isAuthenticated} = getKindeServerSession()
     const userIsConnected = isAuthenticated()
     const user = getUser()
@@ -15,19 +14,15 @@ const Dashboard = async () => {
     const currentUser = await db.user.findFirstOrThrow({
         where : 
         {
-            userId : user?.id
+            userId : user?.id!
         }
     })
     
     return (
         <MaxWidthWrapper>
-            <div>
-                <h1>Welcome to the dashboard Page @{user?.email}</h1>
-                <p>mongo id {currentUser?.id}</p>
-                <p>kinde id {currentUser?.userId}</p>
-            </div>
+            <Dashboard />
         </MaxWidthWrapper>
     )
 }
 
-export default Dashboard
+export default Page
