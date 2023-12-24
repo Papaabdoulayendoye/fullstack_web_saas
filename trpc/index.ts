@@ -17,7 +17,7 @@ export const appRouter = router({
                 userId : user.id
             }
         })
-        if(!UserExists) {
+        if (!UserExists) {
             await db.user.create({
                 data : {
                     userId : user.id,
@@ -25,7 +25,8 @@ export const appRouter = router({
                 }
             })
         }
-        return {success : true } 
+        
+        return {success : true} 
     }),
     getUserFiles : privateProcedure.query( async ({ctx}) => {
         const {userId} = ctx

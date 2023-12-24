@@ -21,6 +21,7 @@ const Page = async () => {
     
     return (
         <MaxWidthWrapper>
+            <h1>{user.email}</h1>
             <Dashboard />
         </MaxWidthWrapper>
     )
