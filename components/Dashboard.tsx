@@ -37,12 +37,12 @@ const Dashboard = () => {
         </div>
 
         { files && files?.length !== 0 ? (
-            <ul className='gap-6 grid sm:grid-cols-1 divide-y divide-zinc-200 md:grid-cols-2 lg:grid-cols-3'>
+            <ul className='!gap-6 grid sm:grid-cols-1 divide-y divide-zinc-200 md:grid-cols-2 lg:grid-cols-3'>
                 {files.sort((a,b) => 
                     new Date(b.createAt).getTime() - new Date(b.createAt).getTime())
                     .map(file => {
                         return (
-                            <li key={file.id} className=' col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow transition hover:shadow-lg p-0 m-0'>
+                            <li key={file.id} className='relative col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow transition hover:shadow-lg p-0 m-0'>
                                 <Link href={`/dashboard/${file.id}`} className='flex flex-col gap-2'>
                                     <div className='pt-6 px-6 w-full flex items-center justify-between space-x-6'>
                                     <div 
@@ -60,9 +60,8 @@ const Dashboard = () => {
                                     </div>
                                 </Link>
                                 <div className='
-                                px-6 mt-4 grid grid-cols-3 
-                                place-items-center
-                                py-2 gap-6 text-sm text-zinc-500'>
+                                px-6 mt-4 grid grid-cols-3 lg:flex lg:item-center gap-3 
+                                py-2 text-sm text-zinc-500'>
                                     <div className='flex items-center gap-2 whitespace-nowrap'>
                                         <Plus className='h-4 w-4' />
                                         {format(new Date(file.createAt),"d eee, MMM yyyy")}

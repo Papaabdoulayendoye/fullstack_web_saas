@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Providers from '@/components/Providers'
 
 import 'react-loading-skeleton/dist/skeleton.css'
+import { Toaster } from '@/components/ui/toaster'
 
 export const metadata: Metadata = {
     title: 'Quill',
@@ -19,7 +20,8 @@ export default function RootLayout({
     return (
         <html lang="en" className='light'>
             <Providers>
-                <body className={cn('min-h-screen font-sans antialiased grainy')}> 
+                <body className={`!bg-gray-50 ${cn('min-h-screen font-sans antialiased grainy')}`}> 
+                        <Toaster />
                         <Navbar />
                         {children}
                 </body>
