@@ -60,15 +60,17 @@ const Dashboard = () => {
                                     </div>
                                 </Link>
                                 <div className='
-                                px-6 mt-4 grid grid-cols-3 lg:flex lg:item-center gap-3 
+                                px-6 mt-4 grid grid-cols-3 lg:flex md:px-2 md:flex md:items-center md:justify-center  lg:item-center gap-3 
                                 py-2 text-sm text-zinc-500'>
-                                    <div className='flex items-center gap-2 whitespace-nowrap'>
+                                    <div className='flex items-center gap-1 whitespace-nowrap'>
                                         <Plus className='h-4 w-4' />
                                         {format(new Date(file.createAt),"d eee, MMM yyyy")}
                                     </div>
-                                    <div className='flex items-center gap-2'>
-                                        <MessageSquare className='h-4 w-4' />
+                                    <div className='flex items-center gap-1 justify-center overflow-hidden'>
+                                        <MessageSquare className='h-10 w-10' />
+                                        <span className='truncate'>
                                         {file.name}
+                                        </span>
                                     </div>
                                     <Button className='w-full' size={'sm'} variant={'destructive'}
                                     onClick={() => deleteFile({id : file.id})}
