@@ -55,7 +55,7 @@ const UpLoadDropzone = () => {
             clearInterval(ProgressInterval!)
             setUploadProgress(100)
             return toast({
-                title : 'Your has been uploaded successfully',
+                title : 'Your file has been uploaded successfully',
                 description : 'Your has been uploaded successfully',
             })
             
