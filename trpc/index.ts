@@ -1,6 +1,6 @@
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { router, publicProcedure, privateProcedure } from './trpc';
-import { TRPCError } from "@trpc/server";
+import { CreateRouterInner, TRPCError } from "@trpc/server";
 import { db } from '@/lib/utils';
 import z from 'zod';
 
