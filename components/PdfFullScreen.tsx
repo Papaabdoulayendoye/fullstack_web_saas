@@ -7,14 +7,12 @@ import SimpleBar from 'simplebar-react'
 import { Document, Page } from 'react-pdf'
 import { toast } from './ui/use-toast'
 import { useResizeDetector } from 'react-resize-detector'
+
 type PdfRendererProps = {
     url : string;
 }
 const PdfFullScreen = ({url} : PdfRendererProps  ) => {
-    const [Scale,setScale] = useState<number>(1)
-    const [Rotation,setRotation] = useState<number>(0)
     const [numPages,setnumPages] = useState<number>()
-    const [currPage,setcurrPage] = useState<number>(1)
     const [isOpen, setisOpen] = useState<boolean>(false)
     const {width,ref} = useResizeDetector()
     return (
@@ -55,7 +53,7 @@ const PdfFullScreen = ({url} : PdfRendererProps  ) => {
                         >
                         {new Array(numPages).fill(0).map((_,i) => { 
                             return (
-                                <Page pageNumber={i + 1} key={i} width={width ? width : 1 } scale={Scale} rotate={Rotation} />
+                                <Page pageNumber={i + 1} key={i} width={width ? width : 1 }/>
                         )})}
                         </Document>
                     </div>
