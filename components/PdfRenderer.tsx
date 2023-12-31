@@ -87,7 +87,6 @@ const PdfRenderer = ({url} : PdfRendererProps) => {
                     <div className='flex items-center gap-1.5 '>
                         <Input 
                             className={cn(`w-12 h-8`,errors.page && "focus-visible:!outline-red-500")} 
-                            // value={currPage}
                             {...register('page')}
                             onKeyDown={(e) => {
                                 if (e.key ==='Enter') {
