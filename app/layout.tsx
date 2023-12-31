@@ -20,6 +20,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className='light'>
+            <head>
+                <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+            </head>
             <Providers>
                 <body className={`!bg-gray-50 ${cn('min-h-screen font-sans antialiased grainy')}`}> 
                         <Toaster />
