@@ -1,7 +1,7 @@
-import { Pinecone } from '@pinecone-database/pinecone';
 
-export const pinecone = new Pinecone({
-    apiKey: process.env.PINECONE_API_QUILL,
-    environment : "gcp-starter"
+import { Pinecone } from '@pinecone-database/pinecone'
+
+export const pc = new Pinecone({
+    apiKey: '484b336a-90e0-4d62-a165-08d2008d75b0'
 });
-// const index = pinecone.index('quickstart');
+// const index = pc.index('quill');
