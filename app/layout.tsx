@@ -11,6 +11,9 @@ import 'simplebar-react/dist/simplebar.min.css'
 export const metadata: Metadata = {
     title: 'Quill',
     description: 'Build an amazing SAAS web app with Josh',
+    icons : {
+        icon : 'favicon.ico'
+    }
 }
 
 export default function RootLayout({
@@ -20,9 +23,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className='light'>
-            <head>
+            {/* <head>
                 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-            </head>
+            </head> */}
             <Providers>
                 <body className={`!bg-gray-50 ${cn('min-h-screen font-sans antialiased grainy')}`}> 
                         <Toaster />
